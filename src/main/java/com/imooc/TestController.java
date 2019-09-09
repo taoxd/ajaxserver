@@ -11,6 +11,6 @@ public class TestController {
     @GetMapping("/get1")
     private ResultBean get1(){
         System.out.println("TestController.get1()");
-        return new ResultBean("get1 OK");
+        return new ResultBean("get1 ok");
     }
 }
