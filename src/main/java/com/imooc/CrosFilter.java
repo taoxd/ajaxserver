@@ -23,6 +23,9 @@ public class CrosFilter implements Filter {
         res.addHeader("Access-Control-Allow-Origin", "*");
         //允许所有方法
         res.addHeader("Access-Control-Allow-Methods", "*");
+        res.addHeader("Access-Control-Allow-Headers", "content-type");
+        //3600秒之内不用再发送预检命令
+        res.addHeader("Access-Control-Max-Age", "3600");
 
         chain.doFilter(request, response);
     }
