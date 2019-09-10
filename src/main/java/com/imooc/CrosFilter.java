@@ -39,7 +39,13 @@ public class CrosFilter implements Filter {
         res.addHeader("Access-Control-Allow-Methods", "*");
 
 
-        res.addHeader("Access-Control-Allow-Headers", "content-type");
+        String headers = req.getHeader("Access-Control-Request-Headers");
+
+        //支持所有自定义头
+        if (!StringUtils.isEmpty(headers)){
+            res.addHeader("Access-Control-Allow-Headers", headers);
+        }
+
         //3600秒之内不用再发送预检命令
         res.addHeader("Access-Control-Max-Age", "3600");
 
