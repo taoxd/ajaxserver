@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/test")
-@CrossOrigin
+//@CrossOrigin
 public class TestController {
 
     @GetMapping("/get1")
